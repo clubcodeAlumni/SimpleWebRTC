@@ -3,9 +3,10 @@ const fs = require('fs');
 const request = require('request');
 const uglify = require('uglify-js');
 
-const bundle = browserify({ standalone: 'SimpleWebRTC' });
+const bundle = browserify({standalone: 'SimpleWebRTC'});
 bundle.add('./src/simplewebrtc');
 bundle.bundle(function (err, source) {
+  'use strict';
   if (err) {
     console.error(err);
   }
